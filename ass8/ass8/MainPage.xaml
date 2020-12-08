@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ass8.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="Beige" Padding="24" CornerRadius="0">
+            <Label Text="Kananelo Online" HorizontalTextAlignment="Center" TextColor="Purple" FontSize="36"/>
+        </Frame>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="*"/>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Entry x:Name=" Name"
+                   Placeholder="Enter your name"/>
+
+            <Entry x:Name="LastName" 
+                   Grid.Row=" 1"
+                   Placeholder="Enter your Last Name"/>
+            
+            <Entry x:Name="Gender" 
+                   Grid.Row="2"  
+                   Placeholder="Enter your Gender"/>
+            
+            <Entry x:Name="Tsize" 
+                   Grid.Row="3"  
+                   Placeholder="Enter your T-shrit size"/>
+            
+            <Entry x:Name="Tcolor" 
+                   Grid.Row="4" 
+                   Placeholder="Enter your T-shirt color"/>
+            
+            <Entry x:Name ="Date" 
+                   Grid.Row="5"  
+                   Placeholder="Enter the Order Date"/>
+            
+            <Entry x:Name="Address" 
+                   Grid.Row="6" 
+                   Placeholder="Enter your shipping addres"/>
+    
+        <Button Text="Submit Order" Clicked="Button_Clicked_2" Grid.Row="7" BackgroundColor="Purple"/>
+            <Button Text="Get Orders" Clicked="Button_Clicked_3" Grid.Row="8" BackgroundColor="Purple"/>
+            
+            <ListView x:Name="peopleList"
+              Grid.Row="9">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="30">
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding Gender}" />
+                                <Label Text="{Binding TShirt_Size}" />
+                                <Label Text="{Binding TShirt_Color}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+
+    </StackLayout>
+
+</ContentPage>
